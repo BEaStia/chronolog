@@ -1,4 +1,4 @@
-class CreateChronologChangesets < ActiveRecord::Migration
+class CreateChronologChangesets < ActiveRecord::Migration[4.2]
   def up
     create_table :chronolog_changesets do |t|
       t.integer :admin_user_id

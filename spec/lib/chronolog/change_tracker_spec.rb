@@ -18,7 +18,7 @@ RSpec.describe Chronolog::ChangeTracker do
     context "when target exists" do
       subject { described_class.new(params) }
 
-      it { expect(subject.identifier).to eq 'Wow, Very Post (Post)' }
+      it { expect(subject.identifier).to eq "Post ##{post.id}" }
     end
 
     context "when identifier is specified" do

@@ -1,6 +1,6 @@
 module Chronolog
   module Test
-    class Database < ActiveRecord::Migration
+    class Database < ActiveRecord::Migration[4.2]
       def self.build
         ActiveRecord::Base.establish_connection(
           adapter:  'sqlite3',
@@ -21,7 +21,7 @@ module Chronolog
         end
 
         add_index :admin_users, :email, unique: true
-        
+
         create_table :chronolog_changesets do |t|
           t.integer :admin_user_id
           t.integer :changeable_id
@@ -46,7 +46,7 @@ module Chronolog
           t.string  :name, null: false, index: true
           t.integer :organization_id
 
-          t.foreign_key :orgnaizations, on_delete: :nullify
+          t.foreign_key :organizations, on_delete: :nullify
         end
 
         add_index :users, :organization_id
@@ -69,7 +69,7 @@ module Chronolog
         create_table :tags do |t|
           t.integer :post_id, null: false
           t.string  :value,   null: false
-          
+
           t.foreign_key :posts, on_delete: :cascade
         end
 

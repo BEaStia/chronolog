@@ -11,7 +11,7 @@ RSpec.describe Chronolog::DiffRepresentation do
       expect(subject.attributes).to eq(
         'title'          => 'Such Post',
         'body'           => 'Oh wow such post body.',
-        'author'         => 'Randy Savage',
+        'author'         => post.user_id,
         'published_date' => 'Friday March 25, 2016'
       )
     end
@@ -27,7 +27,7 @@ RSpec.describe Chronolog::DiffRepresentation do
         expect(subject.attributes).to eq(
           'title'          => 'Such Post',
           'body'           => 'Oh wow such post body.',
-          'author'         => 'Randy Savage',
+          'author'         => post.user_id,
           'published_date' => 'Friday March 25, 2016',
           'tags'           => [{ 'value' => 'Hot Dang' }],
           'photos'         => [{ 'url' => 'shazamm.com' }]
@@ -45,7 +45,7 @@ RSpec.describe Chronolog::DiffRepresentation do
           expect(subject.attributes).to eq(
             'title'          => 'Such Post',
             'body'           => 'Oh wow such post body.',
-            'author'         => 'Randy Savage',
+            'author'         => post.user_id,
             'published_date' => 'Friday March 25, 2016',
             'tags'           => [{ 'value' => 'Hot Dang' }]
           )
@@ -72,7 +72,7 @@ RSpec.describe Chronolog::DiffRepresentation do
         expect(subject.attributes).to eq(
           'title'          => 'Such Post',
           'body'           => 'Oh wow such post body.',
-          'author'         => 'Randy Savage',
+          'author'         => post.user_id,
           'published_date' => 'Friday March 25, 2016',
           'to_s'           => 'Such Post'
         )
@@ -86,7 +86,7 @@ RSpec.describe Chronolog::DiffRepresentation do
         expect(subject.attributes).to eq(
           'title'          => 'Such Post',
           'body'           => 'Oh wow such post body.',
-          'author'         => 'Randy Savage',
+          'author'         => post.user_id,
           'published_date' => 'Friday March 25, 2016',
           'tags'           => ['BOOM', 'Hot Dang']
         )

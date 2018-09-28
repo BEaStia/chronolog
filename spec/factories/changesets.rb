@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :changeset, class: Chronolog::Changeset do
     admin_user
-    changeable factory: :post
+    changeable { create :post }
     changeset  { { 'first_name' => ['Fred', 'Bo'] } }
     action     'update'
     identifier 'Such Post (Post)'

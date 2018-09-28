@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :photo_attachment do
-    record factory: :user
+    record { create :user }
     photo
   end
 end
